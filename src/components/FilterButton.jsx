@@ -1,18 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const FilterButton = (props) => {
-    return (
-        <button
-          type="button"
-          className="btn toggle-btn"
-          aria-pressed={props.isPressed}
-          onClick={() => props.setFilter(props.name)}
-        >
-          <span className="visually-hidden">Show </span>
-          <span>{props.name}</span>
-          <span className="visually-hidden"> tasks</span>
-        </button>
-      );
-}
+const FilterButton = ({ label, value, count, isPressed, setFilter }) => {
+  return (
+    <button
+      type="button"
+      className="filter-button"
+      aria-pressed={isPressed}
+      onClick={() => setFilter(value)}
+    >
+      <span>{label}</span>
+      <strong>{count}</strong>
+    </button>
+  );
+};
 
 export default FilterButton;
